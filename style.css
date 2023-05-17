@@ -1,0 +1,131 @@
+:root{ 
+  /* Colors */
+  /* Primary */
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+
+  /* Neutral */
+
+  --white: hsl(0, 0%, 100%);
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+
+  /* font */
+  --font-family: 'Poppins', sans-serif;
+}
+
+*{
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 200;
+}
+body{
+  /* display: flexbox; */
+  background-color: var(--very-light-gray);
+  font-family: var(--font-family);
+  
+  /* display: flex; */
+  
+}
+.container{
+  margin: 90px 50px 90px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+header{
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  /* padding-left: 180px; */
+}
+header h1{
+  font-size: 26px;
+  
+}
+header h2{
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 17px;
+}
+header p{
+ margin-bottom: 70px;
+}
+.box{
+  background-color: var(--white);
+  margin-bottom: 20px;
+  padding: 25px 30px ;
+  border-radius: 10px;
+  box-shadow: 0px 10px 17px -2px rgba(215,226,238,1);
+  width: 100%;
+  max-width: 350px;
+  height: 100%;
+  max-height: 250px;
+}
+
+.box h3{
+  font-size: 22px;
+  font-weight: 600;
+}
+.box p{
+  color: var(--grayish-blue);
+  margin: 10px 0 13% 0;
+}
+.icon{
+  text-align: right;
+}
+.main_left {
+  border-top: 4px solid var(--cyan);
+}
+.main_middle_top{
+  border-top: 4px solid var(--red);
+}
+.main_middle_bottom{
+  border-top: 4px solid var(--orange);
+}
+.main_right{
+  border-top: 4px solid var(--blue);
+}
+
+@media only screen and (min-width: 850px) {
+  .main{
+    display: grid;
+    grid-template-columns: repeat(2,350px);
+    column-gap: 25px;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  .main{
+    display: grid;
+    grid-template-areas: 
+    "leftd  middle_topd rightd"
+    "leftd middle_bottomd rightd"
+    ;
+  }
+  .main_left {
+    grid-area: leftd;
+    align-self: center;
+  }
+  .main_middle_top{
+    grid-area: middle_topd;
+  }
+  .main_middle_bottom{
+    grid-area: middle_bottomd;
+  }
+  .main_right{
+    grid-area: rightd;
+    align-self: center;
+  }
+  header h1{
+    font-size: 32px;
+  }
+  header h2{
+    font-size: 32px;
+  }
+}
